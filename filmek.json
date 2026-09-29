@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "cim": "Minecraft Movie",
+    "mufaj": "Kaland, Vígjáték",
+    "hossz": 101,
+    "korhatar": 12,
+    "jegyar": 2400,
+    "kep": "images/minecraft.jpg"
+  },
+  {
+    "id": 2,
+    "cim": "Avatar: Fire and Ash",
+    "mufaj": "Sci-fi, Kaland",
+    "hossz": 190,
+    "korhatar": 12,
+    "jegyar": 2900,
+    "kep": "images/avatar.jpg"
+  },
+  {
+    "id": 3,
+    "cim": "Deadpool & Wolverine",
+    "mufaj": "Akció, Vígjáték",
+    "hossz": 128,
+    "korhatar": 16,
+    "jegyar": 2600,
+    "kep": "images/deadpool.jpg"
+  },
+  {
+    "id": 4,
+    "cim": "Inside Out 2",
+    "mufaj": "Animáció, Családi",
+    "hossz": 96,
+    "korhatar": 6,
+    "jegyar": 2200,
+    "kep": "images/insideout2.jpg"
+  },
+  {
+    "id": 5,
+    "cim": "Dune: Part Two",
+    "mufaj": "Sci-fi, Dráma",
+    "hossz": 166,
+    "korhatar": 12,
+    "jegyar": 2700,
+    "kep": "images/dune2.jpg"
+  },
+  {
+    "id": 6,
+    "cim": "Venom: The Last Dance",
+    "mufaj": "Akció, Sci-fi",
+    "hossz": 109,
+    "korhatar": 16,
+    "jegyar": 2500,
+    "kep": "images/venom.jpg"
+  },
+  {
+    "id": 7,
+    "cim": "Gladiator II",
+    "mufaj": "Akció, Dráma",
+    "hossz": 148,
+    "korhatar": 16,
+    "jegyar": 2800,
+    "kep": "images/gladiator2.jpg"
+  },
+  {
+    "id": 8,
+    "cim": "Sonic the Hedgehog 3",
+    "mufaj": "Kaland, Családi",
+    "hossz": 110,
+    "korhatar": 6,
+    "jegyar": 2300,
+    "kep": "images/sonic3.jpg"
+  }
+]
