@@ -1,47 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>BECinema - Foglalások</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Foglalások</h1>
-        <div class="mb-3">
-            <button id="tablaGomb" class="btn btn-primary" onclick="tablazatosNezet()">
-                Táblázatos nézet
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="./index.html">
+                BECinema
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
             </button>
 
-            <button id="kartyaGomb" class="btn btn-outline-primary" onclick="kartyasNezet()">
-                Kártyás nézet
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">
+                            Főoldal
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./filmek.html">
+                            Filmek
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./foglalasok.html">
+                            Foglalások
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+    <div class="container mt-5">
+
+        <h1 class="mb-4">FOGLALÁSOK</h1>
+        <div class="nezet-gombok">
+            <div>
+                <button id="tablaGomb" class="nezet-gomb aktiv" onclick="tablazatosNezet()">
+                    Táblázatos nézet
+                </button>
+
+
+                <button id="kartyaGomb" class="nezet-gomb" onclick="kartyasNezet()">
+
+                    Kártyás nézet
+
+                </button>
+
+            </div>
+
+
+            <button id="ujFoglalasGomb" class="uj-foglalas-gomb" onclick="ujFoglalasMutat()">
+
+                + Új foglalás
+
             </button>
         </div>
+        <!-- ÚJ FOGLALÁS -->
+
+        <div id="ujFoglalasDoboz">
+
+            <h2>Új foglalás</h2>
+
+            <form id="foglalasForm">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Név
+                    </label>
+
+                    <input type="text" id="nev" class="form-control" required>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Email
+                    </label>
+
+                    <input type="email" id="email" class="form-control" required>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Telefonszám
+                    </label>
+
+                    <input type="text" id="telefon" class="form-control" placeholder="06301234567" required>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Film
+                    </label>
+
+                    <select id="film" class="form-select" required>
+
+                        <option value="">
+                            Válassz filmet
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Időpont
+                    </label>
+
+                    <input type="datetime-local" id="idopont" class="form-control" required>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Ülőhely
+                    </label>
+
+                    <input type="text" id="ulohely" class="form-control" placeholder="pl. A1" required>
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Ár
+                    </label>
+
+                    <input type="text" id="ar" class="form-control" readonly>
+
+                </div>
+
+
+                <button type="submit" class="foglalas-kuldes">
+
+                    Foglalás létrehozása
+
+                </button>
+
+            </form>
+
+
+            <div id="uzenet" class="mt-3"></div>
+
+        </div>
+
+
+        <!-- TÁBLÁZATOS NÉZET -->
+
         <div id="tablazatosNezet">
-            <table class="table table-striped table-bordered">
+
+            <table>
+
                 <thead>
+
                     <tr>
+
                         <th>ID</th>
-                        <th>Név</th>
-                        <th>Film</th>
-                        <th>Időpont</th>
-                        <th>Ülőhely</th>
-                        <th>Ár</th>
-                        <th>Művelet</th>
+                        <th>NÉV</th>
+                        <th>FILM</th>
+                        <th>IDŐPONT</th>
+                        <th>ÜLŐHELY</th>
+                        <th>ÁR</th>
+                        <th>MŰVELET</th>
+
                     </tr>
+
                 </thead>
 
-                <tbody id="foglalasTabla"></tbody>
+
+                <tbody id="foglalasTabla">
+
+                </tbody>
+
             </table>
+
         </div>
-        <div id="kartyasNezet" class="row" style="display: none;"></div>
+
+
+        <!-- KÁRTYÁS NÉZET -->
+
+        <div id="kartyasNezet" class="row" style="display: none;">
+
+        </div>
+
     </div>
-    <script src="./foglalasok.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="foglalasok.js"></script>
+
 </body>
 
 </html>

@@ -1,65 +1,366 @@
-.navbar {
-	color: #FF8800;
-	background-color: black;
-}
 body {
 	background-color: black;
 	color: #FF8800;
 	font-family: Arial;
 }
+
+
+/* NAVBAR */
+
+.navbar {
+	background-color: black;
+	border-bottom: 1px solid #FF8800;
+}
+
+.container-fluid {
+	background-color: black;
+}
+
+.navbar-brand {
+	color: #FF8800;
+	font-weight: bold;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+	color: #FF0000;
+}
+
+.nav-link {
+	color: #FF8800;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active:hover,
+.navbar-nav .nav-link:focus {
+	color: #FF0000;
+}
+
+.navbar-nav .nav-link.active {
+	color: #FF8800;
+}
+
+.navbar-collapse {
+	background-color: black;
+}
+
+
+/* CÍMEK */
+
 h1 {
 	text-align: center;
 	font-weight: bold;
 }
-.nav-item {
-	background-color: black;
-}
-.nav-link {
+
+h2 {
 	color: #FF8800;
+	margin-bottom: 20px;
 }
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active:hover,
-.navbar-nav .nav-link:focus {
-    color: #FF0000;
+
+
+/* FELSŐ GOMBSOR */
+
+.nezet-gombok {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 35px;
+	gap: 15px;
 }
-.navbar-brand:hover,
-.navbar-brand:focus {
-    color: #FF0000;
-}
-.container-fluid {
+
+
+/* NÉZETVÁLTÓ GOMB */
+
+.nezet-gomb {
 	background-color: black;
-}
-.dropdown-menu {
-	background-color: black;
-}
-.dropdown-item {
 	color: #FF8800;
-	background-color: black;
-}
-.dropdown-item:hover {
-	color: #FF0000;
-	background-color: black;
-}
-.navbar-brand {
-	color: #FF8800;
-}
-.navbar-collapse {
-	background-color: black;
-}
-a:hover {
-    color: #FF0000;
-}
-a {
-    color: #FF8800;
-}
-table {
+
 	border: 2px solid #FF8800;
-	width: 100%;
-	font-size: 25px;
+
+	padding: 10px 18px;
+
+	border-radius: 6px;
+
+	font-weight: bold;
+
+	margin-right: 8px;
+
+	transition: 0.2s;
 }
+
+.nezet-gomb:hover {
+	background-color: #FF8800;
+	color: black;
+}
+
+.nezet-gomb.aktiv {
+	background-color: #FF8800;
+	color: black;
+}
+
+
+/* ÚJ FOGLALÁS GOMB */
+
+.uj-foglalas-gomb {
+	background-color: #FF8800;
+
+	color: black;
+
+	border: 2px solid #FF8800;
+
+	padding: 10px 20px;
+
+	border-radius: 6px;
+
+	font-weight: bold;
+
+	transition: 0.2s;
+}
+
+.uj-foglalas-gomb:hover {
+	background-color: #FF0000;
+
+	border-color: #FF0000;
+
+	color: white;
+}
+
+
+/* ÚJ FOGLALÁS DOBOZ */
+
+#ujFoglalasDoboz {
+	display: none;
+
+	margin-bottom: 50px;
+}
+
+
+/* FORM */
+
+form {
+	max-width: 700px;
+
+	margin: 20px auto 40px auto;
+
+	padding: 25px;
+
+	background-color: #111111;
+
+	border: 2px solid #FF8800;
+
+	border-radius: 12px;
+
+	box-shadow: 0 0 20px rgba(255, 136, 0, 0.2);
+}
+
+form label {
+	color: #FF8800;
+
+	font-weight: bold;
+
+	margin-bottom: 6px;
+}
+
+form input,
+form select {
+	background-color: black !important;
+
+	color: #FF8800 !important;
+
+	border: 1px solid #FF8800 !important;
+}
+
+form input:focus,
+form select:focus {
+	background-color: black !important;
+
+	color: white !important;
+
+	border-color: #FF0000 !important;
+
+	box-shadow: 0 0 8px rgba(255, 0, 0, 0.5) !important;
+}
+
+form input::placeholder {
+	color: #b36b00;
+}
+
+form option {
+	background-color: black;
+
+	color: #FF8800;
+}
+
+
+/* FOGLALÁS LÉTREHOZÁSA GOMB */
+
+.foglalas-kuldes {
+	background-color: #FF8800;
+
+	color: black;
+
+	border: none;
+
+	padding: 10px 20px;
+
+	border-radius: 6px;
+
+	font-weight: bold;
+
+	transition: 0.2s;
+}
+
+.foglalas-kuldes:hover {
+	background-color: #FF0000;
+
+	color: white;
+}
+
+
+/* TÁBLÁZAT */
+
+table {
+	border-collapse: collapse;
+
+	border: 2px solid #FF8800;
+
+	width: 100%;
+
+	font-size: 18px;
+
+	margin-top: 20px;
+}
+
+thead {
+	background-color: #111111;
+}
+
+th {
+	border: 2px solid #FF8800;
+
+	padding: 12px;
+
+	color: #FF8800;
+}
+
 tr {
 	border: 2px solid #FF8800;
 }
+
 td {
 	border: 2px solid #FF8800;
+
+	padding: 10px;
+
+	color: #FF8800;
+}
+
+
+/* TÖRLÉS GOMB */
+
+.torles-gomb {
+	background-color: #FF0000;
+
+	color: white;
+
+	border: none;
+
+	padding: 7px 12px;
+
+	border-radius: 5px;
+
+	font-weight: bold;
+}
+
+.torles-gomb:hover {
+	background-color: #bb0000;
+}
+
+
+/* KÁRTYÁK */
+
+.card {
+	background-color: #111111;
+
+	border: 2px solid #FF8800;
+
+	color: #FF8800;
+
+	border-radius: 10px;
+
+	transition: 0.2s;
+}
+
+.card:hover {
+	box-shadow: 0 0 15px rgba(255, 136, 0, 0.4);
+
+	transform: translateY(-3px);
+}
+
+.card-title {
+	color: #FF8800;
+
+	font-weight: bold;
+}
+
+.card p {
+	padding: 3px;
+	margin: 5px 0;
+}
+
+
+/* ÜZENETEK */
+
+#uzenet {
+	max-width: 700px;
+
+	margin: 20px auto;
+}
+
+.alert-success {
+	background-color: #111111;
+
+	color: #FF8800;
+
+	border: 1px solid #FF8800;
+}
+
+.alert-danger {
+	background-color: #111111;
+
+	color: #FF0000;
+
+	border: 1px solid #FF0000;
+}
+
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+
+	.nezet-gombok {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.nezet-gombok > div {
+		display: flex;
+	}
+
+	.nezet-gomb {
+		flex: 1;
+	}
+
+	.uj-foglalas-gomb {
+		width: 100%;
+	}
+
+	table {
+		font-size: 13px;
+	}
+
+	th,
+	td {
+		padding: 6px;
+	}
 }

@@ -10,16 +10,28 @@ async function adatokBetoltese() {
 
     tablazatMegjelenites();
     kartyakMegjelenites();
+    filmekBetoltese();
+    minimumDatumBeallitasa();
+}
+
+function filmekBetoltese() {
+    const filmSelect = document.getElementById("film");
+
+    filmek.forEach(film => {
+        const option = document.createElement("option");
+        option.value = film.id;
+        option.textContent = film.cim;
+
+        filmSelect.appendChild(option);
+    });
 }
 
 function tablazatMegjelenites() {
     const tabla = document.getElementById("foglalasTabla");
-
     tabla.innerHTML = "";
 
     foglalasok.forEach(foglalas => {
         const film = filmek.find(film => film.id === foglalas.filmId);
-
         const sor = document.createElement("tr");
 
         sor.innerHTML = `
@@ -30,10 +42,7 @@ function tablazatMegjelenites() {
             <td>${foglalas.ulohely}</td>
             <td>${foglalas.ar} Ft</td>
             <td>
-                <button
-                    class="btn btn-danger btn-sm"
-                    onclick="foglalasTorles(${foglalas.id})"
-                >
+                <button class="torles-gomb" onclick="foglalasTorles(${foglalas.id})">
                     Törlés
                 </button>
             </td>
@@ -45,45 +54,24 @@ function tablazatMegjelenites() {
 
 function kartyakMegjelenites() {
     const kartyaContainer = document.getElementById("kartyasNezet");
-
     kartyaContainer.innerHTML = "";
 
     foglalasok.forEach(foglalas => {
         const film = filmek.find(film => film.id === foglalas.filmId);
-
         const kartya = document.createElement("div");
 
-        kartya.className = "col-md-4 mb-3";
+        kartya.className = "col-md-4 mb-4";
 
         kartya.innerHTML = `
             <div class="card h-100">
                 <div class="card-body">
                     <h5 class="card-title">${film.cim}</h5>
+                    <p><strong>Név:</strong> ${foglalas.nev}</p>
+                    <p><strong>Időpont:</strong> ${foglalas.idopont}</p>
+                    <p><strong>Ülőhely:</strong> ${foglalas.ulohely}</p>
+                    <p><strong>Ár:</strong> ${foglalas.ar} Ft</p>
 
-                    <p>
-                        <strong>Név:</strong>
-                        ${foglalas.nev}
-                    </p>
-
-                    <p>
-                        <strong>Időpont:</strong>
-                        ${foglalas.idopont}
-                    </p>
-
-                    <p>
-                        <strong>Ülőhely:</strong>
-                        ${foglalas.ulohely}
-                    </p>
-
-                    <p>
-                        <strong>Ár:</strong>
-                        ${foglalas.ar} Ft
-                    </p>
-
-                    <button
-                        class="btn btn-danger"
-                        onclick="foglalasTorles(${foglalas.id})"
-                    >
+                    <button class="torles-gomb" onclick="foglalasTorles(${foglalas.id})">
                         Törlés
                     </button>
                 </div>
@@ -92,6 +80,96 @@ function kartyakMegjelenites() {
 
         kartyaContainer.appendChild(kartya);
     });
+}
+
+document.getElementById("film").addEventListener("change", function () {
+    const filmId = Number(this.value);
+    const film = filmek.find(film => film.id === filmId);
+
+    if (film) {
+        document.getElementById("ar").value = film.jegyar + " Ft";
+    } else {
+      document.getElementById("ar").value = "";
+    }
+});
+
+document.getElementById("foglalasForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const nev = document.getElementById("nev").value;
+    const email = document.getElementById("email").value;
+    const telefon = document.getElementById("telefon").value;
+    const filmId = Number(document.getElementById("film").value);
+    const idopont = document.getElementById("idopont").value.replace("T", " ");
+    const ulohely = document.getElementById("ulohely").value.toUpperCase();
+
+    const film = filmek.find(film => film.id === filmId);
+
+    if (!film) {
+        hibaUzenet("Válassz ki egy filmet!");
+        return;
+    }
+
+    const telefonMinta = /^06[237]0\d{7}$/;
+
+    if (!telefonMinta.test(telefon)) {
+        hibaUzenet("Hibás telefonszám! Példa: 06301234567");
+        return;
+    }
+
+    const foglalt = foglalasok.some(foglalas =>
+        foglalas.filmId === filmId &&
+        foglalas.idopont === idopont &&
+        foglalas.ulohely === ulohely
+    );
+
+    if (foglalt) {
+        hibaUzenet("Ez az ülőhely már foglalt erre az időpontra!");
+        return;
+    }
+
+    const ujId = foglalasok.length > 0 ? Math.max(...foglalasok.map(f => f.id)) + 1 : 1;
+
+    const ujFoglalas = {
+        id: ujId,
+        nev: nev,
+        email: email,
+        telefon: telefon,
+        filmId: filmId,
+        idopont: idopont,
+        ulohely: ulohely,
+        ar: film.jegyar
+    };
+
+    foglalasok.push(ujFoglalas);
+
+    tablazatMegjelenites();
+	kartyakMegjelenites();
+
+    document.getElementById("uzenet").innerHTML = `
+        <div class="alert alert-success">
+            Sikeres foglalás!<br>
+            ${nev}<br>
+            ${film.cim}<br>
+            Ülőhely: ${ulohely}<br>
+            Ár: ${film.jegyar} Ft
+        </div>
+    `;
+
+    document.getElementById("foglalasForm").reset();
+    document.getElementById("ar").value = "";
+
+    setTimeout(() => {
+        document.getElementById("ujFoglalasDoboz").style.display = "none";
+    }, 1500);
+});
+
+function hibaUzenet(szoveg) {
+    document.getElementById("uzenet").innerHTML = `
+        <div class="alert alert-danger">
+            ${szoveg}
+        </div>
+    `;
 }
 
 function foglalasTorles(id) {
@@ -105,28 +183,39 @@ function tablazatosNezet() {
     document.getElementById("tablazatosNezet").style.display = "block";
     document.getElementById("kartyasNezet").style.display = "none";
 
-    const tablaGomb = document.getElementById("tablaGomb");
-    const kartyaGomb = document.getElementById("kartyaGomb");
-
-    tablaGomb.classList.remove("btn-outline-primary");
-    tablaGomb.classList.add("btn-primary");
-
-    kartyaGomb.classList.remove("btn-primary");
-    kartyaGomb.classList.add("btn-outline-primary");
+    document.getElementById("tablaGomb").classList.add("aktiv");
+    document.getElementById("kartyaGomb").classList.remove("aktiv");
 }
 
 function kartyasNezet() {
     document.getElementById("tablazatosNezet").style.display = "none";
     document.getElementById("kartyasNezet").style.display = "flex";
 
-    const tablaGomb = document.getElementById("tablaGomb");
-    const kartyaGomb = document.getElementById("kartyaGomb");
+	document.getElementById("kartyaGomb").classList.add("aktiv");
+    document.getElementById("tablaGomb").classList.remove("aktiv");
+}
 
-    tablaGomb.classList.remove("btn-primary");
-    tablaGomb.classList.add("btn-outline-primary");
+function ujFoglalasMutat() {
+    const doboz = document.getElementById("ujFoglalasDoboz");
 
-    kartyaGomb.classList.remove("btn-outline-primary");
-    kartyaGomb.classList.add("btn-primary");
+    if (doboz.style.display === "block") {
+        doboz.style.display = "none";
+    } else {
+        doboz.style.display = "block";
+
+        doboz.scrollIntoView({
+          behavior: "smooth"
+        });
+    }
+}
+
+function minimumDatumBeallitasa() {
+    const datumInput = document.getElementById("idopont");
+    const most = new Date();
+
+    most.setMinutes(most.getMinutes() - most.getTimezoneOffset());
+
+    datumInput.min = most.toISOString().slice(0, 16);
 }
 
 adatokBetoltese();
