@@ -1,63 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BECinema</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-
-            <a class="navbar-brand" href="./index.html">
-                BECinema
-            </a>
-
+            <a class="navbar-brand" href="./index.html">BECinema</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Navigáció">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.html">
-                            Főoldal
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="./filmek.html">
-                            Filmek
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="./foglalasok.html">
-                            Foglalások
-                        </a>
-                    </li>
-
+                    <li class="nav-item"><a class="nav-link active" href="./index.html">Főoldal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./filmek.html">Filmek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./foglalasok.html">Foglalások</a></li>
                 </ul>
             </div>
-
         </div>
     </nav>
-    <h1>BE CINEMA</h1>
-    <p>Mozink látványos és elbűvölő élményt kínál, változatos filmkínálattal minden korosztály számára! Mozink kedvező
-        áron látogatható a DJ Endre Szabadidőközőpontban, és nem kötődik más szolgáltatásokhoz a jegyváltás. A
-        műsorokról bővebben <a href="./filmek.html">itt</a> olvashat. A mozi 2026 szeptembere óta fogadja a szórakozni
-        vágyókat, folyamatosan változó, a jelenlegi trendeknek megfelelő filmkínálattal.</p>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-        crossorigin="anonymous"></script>
+
+    <section class="hero" style="background-image: url('https://mozgokepfesztival.hu/blob/venue-balaton-mozi.exact1600w.jpg');">
+        <div class="hero-tartalom">
+            <h1>ÉLD ÁT A FILMEKET</h1>
+            <p>Filmek, élmények és igazi mozis hangulat. Válassz filmet, foglald le a helyed és élvezd az estét.</p>
+            <div class="hero-gombok">
+                <a href="./filmek.html" class="fo-gomb">Filmek megtekintése</a>
+                <a href="./foglalasok.html" class="masodlagos-gomb">Jegyfoglalás</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container bemutatkozas">
+        <h2>Rólunk</h2>
+        <p>Mozink látványos és elbűvölő élményt kínál, változatos filmkínálattal minden korosztály számára. A BECinema a DJ Endre Szabadidőközpontban található, ahol modern környezetben nézheted meg a legújabb filmeket.</p>
+        <p>A mozi 2026 szeptembere óta fogadja a szórakozni vágyókat. Filmkínálatunk folyamatosan változik, hogy mindig legyen valami új, amit érdemes megnézni.</p>
+    </section>
+
+    <section class="container info-resz">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="info-kartya">
+                    <h3>Modern filmek</h3>
+                    <p>Akció, vígjáték, animáció, sci-fi és családi filmek folyamatosan frissülő választékban.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-kartya">
+                    <h3>Egyszerű foglalás</h3>
+                    <p>Válaszd ki a filmet, az időpontot és a szabad ülőhelyeket, majd néhány kattintással elkészül a foglalás.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-kartya">
+                    <h3>Mozis élmény</h3>
+                    <p>Kényelmes ülőhelyek, nagy vászon és igazi mozis hangulat vár minden látogatót.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mozi-resz">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba"
+                    class="img-fluid mozi-kep" alt="Moziterem">
+            </div>
+            <div class="col-md-6">
+                <h2>A moziterem</h2>
+                <p>A BECinema terme modern kialakítású, kényelmes ülőhelyekkel és nagyméretű vászonnal.</p>
+                <p>A terem ülőhelyei online is kiválaszthatók, így már foglaláskor eldöntheted, honnan szeretnéd nézni a filmet.</p>
+                <a href="./foglalasok.html" class="fo-gomb">Foglalás</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container galeria">
+        <h2>Képek</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="https://fiveinone.hu/wp-content/uploads/2023/01/mozi2.png"
+                    class="img-fluid galeria-kep" alt="Mozi">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c"
+                    class="img-fluid galeria-kep" alt="Mozivászon">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="https://www.cinemacity.hu/static/dam/jcr:2402ba03-9fcc-4c5a-bf48-66ad6b37b312"
+                    class="img-fluid galeria-kep" alt="Popcorn">
+            </div>
+        </div>
+    </section>
+
+    <section class="container kapcsolat">
+        <h2>Információk</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="info-doboz">
+                    <h3>Nyitvatartás</h3>
+                    <p>Hétfő - Csütörtök: 15:00 - 22:00</p>
+                    <p>Péntek: 15:00 - 23:00</p>
+                    <p>Szombat: 12:00 - 23:00</p>
+                    <p>Vasárnap: 12:00 - 21:00</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="info-doboz">
+                    <h3>Helyszín</h3>
+                    <p>DJ Endre Szabadidőközpont</p>
+                    <p>A mozijegy külön megvásárolható, nem szükséges más szolgáltatást igénybe venni.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Készen állsz a következő filmre?</h2>
+        <p>Nézd meg az aktuális kínálatot és foglald le a helyed.</p>
+        <a href="./filmek.html" class="fo-gomb">Filmek</a>
+        <a href="./foglalasok.html" class="masodlagos-gomb">Foglalás</a>
+    </section>
+
+    <footer>
+        <p>BECinema © 2026</p>
+    </footer>
+
+    <button id="felGomb" onclick="oldalTetejere()">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener("scroll", function () {
+            const gomb = document.getElementById("felGomb");
+            if (window.scrollY > 300) {
+                gomb.style.display = "block";
+            } else {
+                gomb.style.display = "none";
+            }
+        });
+
+        function oldalTetejere() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
 </body>
 </html>

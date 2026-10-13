@@ -4,6 +4,6 @@ Ez egy egyszerű mozi weboldal, ami bemutatja az elérhető filmeket és a fogla
 
 A foglalások törölhetőek, de az adat csak az oldal újratöltéséig változik meg.
 
-Használathoz indítsd el az `index.html` fájlt egy helyi webszerveren keresztül.
+Használathoz indítsa el az `index.html` fájlt egy helyi webszerveren keresztül.
 
 Készítette: Lakatos Bence & Újvári Endre

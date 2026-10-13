@@ -1,366 +1,729 @@
 body {
-	background-color: black;
-	color: #FF8800;
-	font-family: Arial;
+    background-color: black;
+    color: #FF8800;
+    font-family: Arial;
+    margin: 0;
 }
 
-
-/* NAVBAR */
-
 .navbar {
-	background-color: black;
-	border-bottom: 1px solid #FF8800;
+    background-color: black !important;
+    border-bottom: 1px solid #FF8800;
 }
 
 .container-fluid {
-	background-color: black;
+    background-color: black;
 }
 
 .navbar-brand {
-	color: #FF8800;
-	font-weight: bold;
+    color: #FF8800;
+    font-weight: bold;
 }
 
 .navbar-brand:hover,
 .navbar-brand:focus {
-	color: #FF0000;
+    color: #FF0000;
 }
 
 .nav-link {
-	color: #FF8800;
+    color: #FF8800;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active:hover,
 .navbar-nav .nav-link:focus {
-	color: #FF0000;
+    color: #FF0000;
 }
 
 .navbar-nav .nav-link.active {
-	color: #FF8800;
+    color: #FF8800;
 }
 
 .navbar-collapse {
-	background-color: black;
+    background-color: black;
 }
 
-
-/* CÍMEK */
-
 h1 {
-	text-align: center;
-	font-weight: bold;
+    font-weight: bold;
 }
 
 h2 {
-	color: #FF8800;
-	margin-bottom: 20px;
+    color: #FF8800;
+    margin-bottom: 20px;
+}
+
+.hero {
+    min-height: 560px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.52) 45%,
+        rgba(0, 0, 0, 0.12) 75%
+    );
+}
+
+.hero-tartalom {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    text-align: left;
+}
+
+.hero-kis-cim {
+    display: inline-block;
+    color: #FF8800;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 68px;
+    color: #FF8800;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: white;
+    font-size: 21px;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+.hero-gombok {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.fo-gomb,
+.masodlagos-gomb {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.fo-gomb {
+    background-color: #FF8800;
+    color: black;
+    border: 2px solid #FF8800;
+}
+
+.fo-gomb:hover {
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: white;
+}
+
+.masodlagos-gomb {
+    background-color: transparent;
+    color: #FF8800;
+    border: 2px solid #FF8800;
+}
+
+.masodlagos-gomb:hover {
+    background-color: #FF8800;
+    color: black;
+}
+
+.bemutatkozas {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.bemutatkozas h2 {
+    text-align: center;
+}
+
+.bemutatkozas p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+.info-resz {
+    padding-bottom: 60px;
+}
+
+.info-kartya {
+    height: 100%;
+    background-color: #111111;
+    border: 2px solid #FF8800;
+    border-radius: 10px;
+    padding: 25px;
+    transition: 0.2s;
+}
+
+.info-kartya:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 136, 0, 0.3);
+}
+
+.info-kartya h3 {
+    color: #FF8800;
+    font-size: 24px;
+}
+
+.info-kartya p {
+    color: #ddd;
+    margin-bottom: 0;
+}
+
+.mozi-resz {
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.mozi-kep {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #FF8800;
+}
+
+.mozi-resz p {
+    color: #ddd;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.galeria {
+    padding-bottom: 70px;
+}
+
+.galeria h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.galeria-kep {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #FF8800;
+    transition: 0.2s;
+}
+
+.galeria-kep:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 136, 0, 0.3);
+}
+
+.kapcsolat {
+    padding-bottom: 70px;
+}
+
+.kapcsolat h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info-doboz {
+    height: 100%;
+    background-color: #111111;
+    border: 2px solid #FF8800;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.info-doboz h3 {
+    color: #FF8800;
+    margin-bottom: 20px;
+}
+
+.info-doboz p {
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.cta {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #111111;
+    border-top: 2px solid #FF8800;
+    border-bottom: 2px solid #FF8800;
+}
+
+.cta h2 {
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #ddd;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #FF8800;
+    background-color: black;
+}
+
+footer p {
+    margin: 0;
+}
+
+#felGomb {
+    display: none;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background-color: #FF8800;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#felGomb:hover {
+    background-color: #FF0000;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 470px;
+        padding: 40px 20px;
+        background-position: center;
+    }
+
+    .hero-tartalom {
+        text-align: center;
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-gombok {
+        justify-content: center;
+    }
+
+    .mozi-kep {
+        margin-bottom: 30px;
+        height: 260px;
+    }
+
+    .info-kartya {
+        padding: 20px;
+    }
+}
+/* FILMEK OLDAL */
+
+#filmekTabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+#filmekTabla th {
+    background-color: #111111;
+    color: #FF8800;
+    border: 2px solid #FF8800;
+    padding: 12px;
+}
+
+#filmekTabla td {
+    color: #FF8800;
+    border: 2px solid #FF8800;
+    padding: 12px;
+}
+
+#filmekTabla tr:hover {
+    background-color: #111111;
 }
 
 
-/* FELSŐ GOMBSOR */
+/* FOGLALÁSOK OLDAL */
 
 .nezet-gombok {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 35px;
-	gap: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px;
 }
 
-
-/* NÉZETVÁLTÓ GOMB */
-
 .nezet-gomb {
-	background-color: black;
-	color: #FF8800;
-
-	border: 2px solid #FF8800;
-
-	padding: 10px 18px;
-
-	border-radius: 6px;
-
-	font-weight: bold;
-
-	margin-right: 8px;
-
-	transition: 0.2s;
+    background-color: black;
+    color: #FF8800;
+    border: 2px solid #FF8800;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-right: 8px;
+    transition: 0.2s;
 }
 
 .nezet-gomb:hover {
-	background-color: #FF8800;
-	color: black;
+    background-color: #FF8800;
+    color: black;
 }
 
 .nezet-gomb.aktiv {
-	background-color: #FF8800;
-	color: black;
+    background-color: #FF8800;
+    color: black;
 }
 
-
-/* ÚJ FOGLALÁS GOMB */
-
 .uj-foglalas-gomb {
-	background-color: #FF8800;
-
-	color: black;
-
-	border: 2px solid #FF8800;
-
-	padding: 10px 20px;
-
-	border-radius: 6px;
-
-	font-weight: bold;
-
-	transition: 0.2s;
+    background-color: #FF8800;
+    color: black;
+    border: 2px solid #FF8800;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
 .uj-foglalas-gomb:hover {
-	background-color: #FF0000;
-
-	border-color: #FF0000;
-
-	color: white;
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: white;
 }
 
 
-/* ÚJ FOGLALÁS DOBOZ */
+/* SZŰRÉS */
+
+.szures-doboz {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.szures-doboz input,
+.szures-doboz select {
+    background-color: black !important;
+    color: #FF8800 !important;
+    border: 2px solid #FF8800 !important;
+    border-radius: 6px;
+}
+
+.szures-doboz input:focus,
+.szures-doboz select:focus {
+    background-color: black !important;
+    color: white !important;
+    border-color: #FF0000 !important;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4) !important;
+}
+
+.szures-doboz input::placeholder {
+    color: #b36b00;
+}
+
+.szures-doboz select option {
+    background-color: black;
+    color: #FF8800;
+}
+
+#nevKereses {
+    flex: 1;
+}
+
+#filmSzures {
+    max-width: 300px;
+}
+
+
+/* ÚJ FOGLALÁS */
 
 #ujFoglalasDoboz {
-	display: none;
-
-	margin-bottom: 50px;
+    display: none;
+    margin-bottom: 50px;
 }
 
-
-/* FORM */
-
-form {
-	max-width: 700px;
-
-	margin: 20px auto 40px auto;
-
-	padding: 25px;
-
-	background-color: #111111;
-
-	border: 2px solid #FF8800;
-
-	border-radius: 12px;
-
-	box-shadow: 0 0 20px rgba(255, 136, 0, 0.2);
+#ujFoglalasDoboz h2 {
+    text-align: center;
 }
 
-form label {
-	color: #FF8800;
-
-	font-weight: bold;
-
-	margin-bottom: 6px;
+#foglalasForm {
+    max-width: 700px;
+    margin: 20px auto 40px auto;
+    padding: 25px;
+    background-color: #111111;
+    border: 2px solid #FF8800;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 136, 0, 0.2);
 }
 
-form input,
-form select {
-	background-color: black !important;
-
-	color: #FF8800 !important;
-
-	border: 1px solid #FF8800 !important;
+#foglalasForm label {
+    color: #FF8800;
+    font-weight: bold;
+    margin-bottom: 6px;
 }
 
-form input:focus,
-form select:focus {
-	background-color: black !important;
-
-	color: white !important;
-
-	border-color: #FF0000 !important;
-
-	box-shadow: 0 0 8px rgba(255, 0, 0, 0.5) !important;
+#foglalasForm input,
+#foglalasForm select {
+    background-color: black !important;
+    color: #FF8800 !important;
+    border: 1px solid #FF8800 !important;
 }
 
-form input::placeholder {
-	color: #b36b00;
+#foglalasForm input:focus,
+#foglalasForm select:focus {
+    background-color: black !important;
+    color: white !important;
+    border-color: #FF0000 !important;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5) !important;
 }
 
-form option {
-	background-color: black;
-
-	color: #FF8800;
+#foglalasForm input::placeholder {
+    color: #b36b00;
 }
 
-
-/* FOGLALÁS LÉTREHOZÁSA GOMB */
+#foglalasForm option {
+    background-color: black;
+    color: #FF8800;
+}
 
 .foglalas-kuldes {
-	background-color: #FF8800;
-
-	color: black;
-
-	border: none;
-
-	padding: 10px 20px;
-
-	border-radius: 6px;
-
-	font-weight: bold;
-
-	transition: 0.2s;
+    background-color: #FF8800;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
 .foglalas-kuldes:hover {
-	background-color: #FF0000;
-
-	color: white;
+    background-color: #FF0000;
+    color: white;
 }
 
 
-/* TÁBLÁZAT */
+/* ÜLŐHELYEK */
 
-table {
-	border-collapse: collapse;
-
-	border: 2px solid #FF8800;
-
-	width: 100%;
-
-	font-size: 18px;
-
-	margin-top: 20px;
+#vaszon {
+    max-width: 500px;
+    margin: 20px auto 25px auto;
+    text-align: center;
+    background-color: #FF8800;
+    color: black;
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(255, 136, 0, 0.25);
 }
 
-thead {
-	background-color: #111111;
+#ulohelyek {
+    max-width: 500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
 }
 
-th {
-	border: 2px solid #FF8800;
-
-	padding: 12px;
-
-	color: #FF8800;
+.ulohely {
+    background-color: black;
+    color: #FF8800;
+    border: 2px solid #FF8800;
+    padding: 8px 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
-tr {
-	border: 2px solid #FF8800;
+.ulohely:hover {
+    background-color: #FF8800;
+    color: black;
 }
 
-td {
-	border: 2px solid #FF8800;
+.ulohely.kivalasztott {
+    background-color: #FF8800;
+    color: black;
+}
 
-	padding: 10px;
+.ulohely.foglalt {
+    background-color: #333;
+    border-color: #555;
+    color: #777;
+    cursor: not-allowed;
+}
 
-	color: #FF8800;
+#helyInfo {
+    text-align: center;
+    padding: 4px;
+}
+
+#kivalasztottHelyek {
+    text-align: center;
+    margin-top: 15px;
+    padding: 5px;
+    font-weight: bold;
 }
 
 
-/* TÖRLÉS GOMB */
+/* FOGLALÁSOK TÁBLÁZAT */
+
+#tablazatosNezet table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#tablazatosNezet thead {
+    background-color: #111111;
+}
+
+#tablazatosNezet th {
+    border: 2px solid #FF8800;
+    padding: 12px;
+    color: #FF8800;
+}
+
+#tablazatosNezet td {
+    border: 2px solid #FF8800;
+    padding: 10px;
+    color: #FF8800;
+}
+
+
+/* TÖRLÉS */
 
 .torles-gomb {
-	background-color: #FF0000;
-
-	color: white;
-
-	border: none;
-
-	padding: 7px 12px;
-
-	border-radius: 5px;
-
-	font-weight: bold;
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .torles-gomb:hover {
-	background-color: #bb0000;
+    background-color: #bb0000;
 }
 
 
-/* KÁRTYÁK */
+/* KÁRTYÁS NÉZET */
 
-.card {
-	background-color: #111111;
-
-	border: 2px solid #FF8800;
-
-	color: #FF8800;
-
-	border-radius: 10px;
-
-	transition: 0.2s;
+#kartyasNezet .card {
+    background-color: #111111;
+    border: 2px solid #FF8800;
+    color: #FF8800;
+    border-radius: 10px;
+    transition: 0.2s;
 }
 
-.card:hover {
-	box-shadow: 0 0 15px rgba(255, 136, 0, 0.4);
-
-	transform: translateY(-3px);
+#kartyasNezet .card:hover {
+    box-shadow: 0 0 15px rgba(255, 136, 0, 0.4);
+    transform: translateY(-3px);
 }
 
-.card-title {
-	color: #FF8800;
-
-	font-weight: bold;
+#kartyasNezet .card-title {
+    color: #FF8800;
+    font-weight: bold;
 }
 
-.card p {
-	padding: 3px;
-	margin: 5px 0;
+#kartyasNezet .card p {
+    margin: 5px 0;
 }
 
 
 /* ÜZENETEK */
 
 #uzenet {
-	max-width: 700px;
-
-	margin: 20px auto;
+    max-width: 700px;
+    margin: 20px auto;
 }
 
 .alert-success {
-	background-color: #111111;
-
-	color: #FF8800;
-
-	border: 1px solid #FF8800;
+    background-color: #111111;
+    color: #FF8800;
+    border: 1px solid #FF8800;
 }
 
 .alert-danger {
-	background-color: #111111;
-
-	color: #FF0000;
-
-	border: 1px solid #FF0000;
+    background-color: #111111;
+    color: #FF0000;
+    border: 1px solid #FF0000;
 }
 
 
 /* MOBIL */
 
 @media (max-width: 768px) {
+    .nezet-gombok {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-	.nezet-gombok {
-		flex-direction: column;
-		align-items: stretch;
-	}
+    .nezet-gombok > div {
+        display: flex;
+    }
 
-	.nezet-gombok > div {
-		display: flex;
-	}
+    .nezet-gomb {
+        flex: 1;
+    }
 
-	.nezet-gomb {
-		flex: 1;
-	}
+    .uj-foglalas-gomb {
+        width: 100%;
+    }
 
-	.uj-foglalas-gomb {
-		width: 100%;
-	}
+    .szures-doboz {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-	table {
-		font-size: 13px;
-	}
+    #filmSzures {
+        max-width: none;
+    }
 
-	th,
-	td {
-		padding: 6px;
-	}
+    #ulohelyek {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #tablazatosNezet {
+        overflow-x: auto;
+    }
+
+    #tablazatosNezet table,
+    #filmekTabla {
+        font-size: 13px;
+    }
+
+    #tablazatosNezet th,
+    #tablazatosNezet td,
+    #filmekTabla th,
+    #filmekTabla td {
+        padding: 6px;
+    }
 }

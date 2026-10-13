@@ -21,3 +21,20 @@ async function adatokBetoltese() {
 document.addEventListener("DOMContentLoaded", function () {
     adatokBetoltese();
 });
+
+window.addEventListener("scroll", function () {
+    const gomb = document.getElementById("felGomb");
+
+    if (window.scrollY > 300) {
+        gomb.style.display = "block";
+    } else {
+        gomb.style.display = "none";
+    }
+});
+
+function oldalTetejere() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
