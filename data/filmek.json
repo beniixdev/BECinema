@@ -5,8 +5,7 @@
     "mufaj": "Kaland, Vígjáték",
     "hossz": 101,
     "korhatar": 12,
-    "jegyar": 2400,
-    "kep": "images/minecraft.jpg"
+    "jegyar": 2400
   },
   {
     "id": 2,
@@ -14,8 +13,7 @@
     "mufaj": "Sci-fi, Kaland",
     "hossz": 190,
     "korhatar": 12,
-    "jegyar": 2900,
-    "kep": "images/avatar.jpg"
+    "jegyar": 2900
   },
   {
     "id": 3,
@@ -23,8 +21,7 @@
     "mufaj": "Akció, Vígjáték",
     "hossz": 128,
     "korhatar": 16,
-    "jegyar": 2600,
-    "kep": "images/deadpool.jpg"
+    "jegyar": 2600
   },
   {
     "id": 4,
@@ -32,8 +29,7 @@
     "mufaj": "Animáció, Családi",
     "hossz": 96,
     "korhatar": 6,
-    "jegyar": 2200,
-    "kep": "images/insideout2.jpg"
+    "jegyar": 2200
   },
   {
     "id": 5,
@@ -41,8 +37,7 @@
     "mufaj": "Sci-fi, Dráma",
     "hossz": 166,
     "korhatar": 12,
-    "jegyar": 2700,
-    "kep": "images/dune2.jpg"
+    "jegyar": 2700
   },
   {
     "id": 6,
@@ -50,8 +45,7 @@
     "mufaj": "Akció, Sci-fi",
     "hossz": 109,
     "korhatar": 16,
-    "jegyar": 2500,
-    "kep": "images/venom.jpg"
+    "jegyar": 2500
   },
   {
     "id": 7,
@@ -59,8 +53,7 @@
     "mufaj": "Akció, Dráma",
     "hossz": 148,
     "korhatar": 16,
-    "jegyar": 2800,
-    "kep": "images/gladiator2.jpg"
+    "jegyar": 2800
   },
   {
     "id": 8,
@@ -68,7 +61,22 @@
     "mufaj": "Kaland, Családi",
     "hossz": 110,
     "korhatar": 6,
-    "jegyar": 2300,
-    "kep": "images/sonic3.jpg"
+    "jegyar": 2300
+  },
+  {
+    "id": 9,
+    "cim": "Joker: Folie à Deux",
+    "mufaj": "Dráma, Thriller",
+    "hossz": 138,
+    "korhatar": 16,
+    "jegyar": 2700
+  },
+  {
+    "id": 10,
+    "cim": "Moana 2",
+    "mufaj": "Animáció, Kaland",
+    "hossz": 100,
+    "korhatar": 6,
+    "jegyar": 2300
   }
 ]

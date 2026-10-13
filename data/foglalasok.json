@@ -5,7 +5,7 @@
     "email": "kovacs.peter@gmail.com",
     "telefon": "06301234567",
     "filmId": 1,
-    "idopont": "2026-10-02 16:00",
+    "idopont": "2026-10-15 16:00",
     "ulohely": "A1",
     "ar": 2400
   },
@@ -15,7 +15,7 @@
     "email": "nagy.anna@gmail.com",
     "telefon": "06201234567",
     "filmId": 1,
-    "idopont": "2026-10-02 16:00",
+    "idopont": "2026-10-15 16:00",
     "ulohely": "A2",
     "ar": 2400
   },
@@ -24,90 +24,90 @@
     "nev": "Toth David",
     "email": "toth.david@gmail.com",
     "telefon": "06305554444",
-    "filmId": 2,
-    "idopont": "2026-10-02 18:30",
+    "filmId": 1,
+    "idopont": "2026-10-16 18:00",
     "ulohely": "B3",
-    "ar": 2900
+    "ar": 2400
   },
   {
     "id": 4,
     "nev": "Horvath Mark",
     "email": "horvath.mark@gmail.com",
     "telefon": "06701234567",
-    "filmId": 3,
-    "idopont": "2026-10-03 20:00",
+    "filmId": 2,
+    "idopont": "2026-10-15 18:30",
     "ulohely": "C4",
-    "ar": 2600
+    "ar": 2900
   },
   {
     "id": 5,
     "nev": "Szabo Petra",
     "email": "szabo.petra@gmail.com",
     "telefon": "06307778888",
-    "filmId": 4,
-    "idopont": "2026-10-03 15:00",
+    "filmId": 2,
+    "idopont": "2026-10-15 18:30",
     "ulohely": "D2",
-    "ar": 2200
+    "ar": 2900
   },
   {
     "id": 6,
     "nev": "Varga Bence",
     "email": "varga.bence@gmail.com",
     "telefon": "06203334444",
-    "filmId": 5,
-    "idopont": "2026-10-03 19:00",
+    "filmId": 2,
+    "idopont": "2026-10-17 20:00",
     "ulohely": "E5",
-    "ar": 2700
+    "ar": 2900
   },
   {
     "id": 7,
     "nev": "Kiss Laura",
     "email": "kiss.laura@gmail.com",
     "telefon": "06301112222",
-    "filmId": 6,
-    "idopont": "2026-10-04 17:00",
+    "filmId": 3,
+    "idopont": "2026-10-16 20:00",
     "ulohely": "A5",
-    "ar": 2500
+    "ar": 2600
   },
   {
     "id": 8,
     "nev": "Molnar Adam",
     "email": "molnar.adam@gmail.com",
     "telefon": "06309998888",
-    "filmId": 7,
-    "idopont": "2026-10-04 19:30",
+    "filmId": 3,
+    "idopont": "2026-10-16 20:00",
     "ulohely": "B6",
-    "ar": 2800
+    "ar": 2600
   },
   {
     "id": 9,
     "nev": "Farkas Lili",
     "email": "farkas.lili@gmail.com",
     "telefon": "06207776666",
-    "filmId": 8,
-    "idopont": "2026-10-04 16:30",
+    "filmId": 3,
+    "idopont": "2026-10-18 19:30",
     "ulohely": "C1",
-    "ar": 2300
+    "ar": 2600
   },
   {
     "id": 10,
     "nev": "Balogh Daniel",
     "email": "balogh.daniel@gmail.com",
     "telefon": "06306665555",
-    "filmId": 2,
-    "idopont": "2026-10-05 18:30",
+    "filmId": 4,
+    "idopont": "2026-10-15 15:00",
     "ulohely": "D4",
-    "ar": 2900
+    "ar": 2200
   },
   {
     "id": 11,
     "nev": "Papp Mate",
     "email": "papp.mate@gmail.com",
     "telefon": "06304443333",
-    "filmId": 3,
-    "idopont": "2026-10-05 20:00",
+    "filmId": 4,
+    "idopont": "2026-10-15 15:00",
     "ulohely": "A7",
-    "ar": 2600
+    "ar": 2200
   },
   {
     "id": 12,
@@ -115,7 +115,7 @@
     "email": "takacs.emma@gmail.com",
     "telefon": "06202221111",
     "filmId": 4,
-    "idopont": "2026-10-05 15:00",
+    "idopont": "2026-10-19 17:00",
     "ulohely": "E1",
     "ar": 2200
   },
@@ -125,7 +125,7 @@
     "email": "juhasz.noel@gmail.com",
     "telefon": "06301239876",
     "filmId": 5,
-    "idopont": "2026-10-06 19:00",
+    "idopont": "2026-10-16 19:00",
     "ulohely": "B2",
     "ar": 2700
   },
@@ -134,49 +134,169 @@
     "nev": "Simon Dora",
     "email": "simon.dora@gmail.com",
     "telefon": "06709876543",
-    "filmId": 6,
-    "idopont": "2026-10-06 17:00",
+    "filmId": 5,
+    "idopont": "2026-10-16 19:00",
     "ulohely": "C7",
-    "ar": 2500
+    "ar": 2700
   },
   {
     "id": 15,
     "nev": "Biro Alex",
     "email": "biro.alex@gmail.com",
     "telefon": "06305556666",
-    "filmId": 7,
-    "idopont": "2026-10-06 19:30",
+    "filmId": 5,
+    "idopont": "2026-10-20 20:30",
     "ulohely": "D6",
-    "ar": 2800
+    "ar": 2700
   },
   {
     "id": 16,
     "nev": "Lukacs Nora",
     "email": "lukacs.nora@gmail.com",
     "telefon": "06208887777",
-    "filmId": 8,
-    "idopont": "2026-10-07 16:30",
+    "filmId": 6,
+    "idopont": "2026-10-17 17:00",
     "ulohely": "A3",
-    "ar": 2300
+    "ar": 2500
   },
   {
     "id": 17,
     "nev": "Gabor Zsolt",
     "email": "gabor.zsolt@gmail.com",
     "telefon": "06303335555",
-    "filmId": 1,
-    "idopont": "2026-10-07 16:00",
+    "filmId": 6,
+    "idopont": "2026-10-17 17:00",
     "ulohely": "B5",
-    "ar": 2400
+    "ar": 2500
   },
   {
     "id": 18,
     "nev": "Kelemen Rita",
     "email": "kelemen.rita@gmail.com",
     "telefon": "06201114444",
-    "filmId": 5,
-    "idopont": "2026-10-07 19:00",
+    "filmId": 6,
+    "idopont": "2026-10-21 19:00",
     "ulohely": "E4",
+    "ar": 2500
+  },
+  {
+    "id": 19,
+    "nev": "Feher Eszter",
+    "email": "feher.eszter@gmail.com",
+    "telefon": "06302223333",
+    "filmId": 7,
+    "idopont": "2026-10-18 19:30",
+    "ulohely": "B4",
+    "ar": 2800
+  },
+  {
+    "id": 20,
+    "nev": "Kovacs Levente",
+    "email": "kovacs.levente@gmail.com",
+    "telefon": "06703334444",
+    "filmId": 7,
+    "idopont": "2026-10-18 19:30",
+    "ulohely": "D5",
+    "ar": 2800
+  },
+  {
+    "id": 21,
+    "nev": "Szalai Petra",
+    "email": "szalai.petra@gmail.com",
+    "telefon": "06307771111",
+    "filmId": 7,
+    "idopont": "2026-10-22 20:00",
+    "ulohely": "C6",
+    "ar": 2800
+  },
+  {
+    "id": 22,
+    "nev": "Fodor Adam",
+    "email": "fodor.adam@gmail.com",
+    "telefon": "06205554444",
+    "filmId": 8,
+    "idopont": "2026-10-18 16:30",
+    "ulohely": "A4",
+    "ar": 2300
+  },
+  {
+    "id": 23,
+    "nev": "Nemeth Anna",
+    "email": "nemeth.anna@gmail.com",
+    "telefon": "06301118888",
+    "filmId": 8,
+    "idopont": "2026-10-18 16:30",
+    "ulohely": "C3",
+    "ar": 2300
+  },
+  {
+    "id": 24,
+    "nev": "Lakatos David",
+    "email": "lakatos.david@gmail.com",
+    "telefon": "06709997777",
+    "filmId": 8,
+    "idopont": "2026-10-23 18:00",
+    "ulohely": "E2",
+    "ar": 2300
+  },
+  {
+    "id": 25,
+    "nev": "Bognar Laura",
+    "email": "bognar.laura@gmail.com",
+    "telefon": "06203332222",
+    "filmId": 9,
+    "idopont": "2026-10-19 20:00",
+    "ulohely": "A6",
     "ar": 2700
+  },
+  {
+    "id": 26,
+    "nev": "Sipos Mark",
+    "email": "sipos.mark@gmail.com",
+    "telefon": "06304445555",
+    "filmId": 9,
+    "idopont": "2026-10-19 20:00",
+    "ulohely": "B7",
+    "ar": 2700
+  },
+  {
+    "id": 27,
+    "nev": "Vincze Emma",
+    "email": "vincze.emma@gmail.com",
+    "telefon": "06701231234",
+    "filmId": 9,
+    "idopont": "2026-10-24 21:00",
+    "ulohely": "D3",
+    "ar": 2700
+  },
+  {
+    "id": 28,
+    "nev": "Orban Mate",
+    "email": "orban.mate@gmail.com",
+    "telefon": "06308887777",
+    "filmId": 10,
+    "idopont": "2026-10-20 15:30",
+    "ulohely": "A8",
+    "ar": 2300
+  },
+  {
+    "id": 29,
+    "nev": "Kerekes Lili",
+    "email": "kerekes.lili@gmail.com",
+    "telefon": "06206665555",
+    "filmId": 10,
+    "idopont": "2026-10-20 15:30",
+    "ulohely": "C5",
+    "ar": 2300
+  },
+  {
+    "id": 30,
+    "nev": "Fazekas Noel",
+    "email": "fazekas.noel@gmail.com",
+    "telefon": "06309991111",
+    "filmId": 10,
+    "idopont": "2026-10-25 17:30",
+    "ulohely": "E6",
+    "ar": 2300
   }
 ]

@@ -1,6 +1,7 @@
 let foglalasok = [];
 let filmek = [];
 let kivalasztottHelyek = [];
+let vetitesiIdopontok = [];
 
 async function adatokBetoltese() {
     const foglalasResponse = await fetch("data/foglalasok.json");
@@ -9,10 +10,16 @@ async function adatokBetoltese() {
     const filmResponse = await fetch("data/filmek.json");
     filmek = await filmResponse.json();
 
+    vetitesiIdopontok = foglalasok.map(foglalas => {
+        return {
+            filmId: foglalas.filmId,
+            idopont: foglalas.idopont
+        };
+    });
+
     tablazatMegjelenites();
     kartyakMegjelenites();
     filmekBetoltese();
-    minimumDatumBeallitasa();
     arFrissites();
 }
 
@@ -30,6 +37,48 @@ function filmekBetoltese() {
         szuroOption.value = film.id;
         szuroOption.textContent = film.cim;
         filmSzures.appendChild(szuroOption);
+    });
+}
+
+function idopontokBetoltese() {
+    const filmId = Number(document.getElementById("film").value);
+    const idopontSelect = document.getElementById("idopont");
+
+    idopontSelect.innerHTML = "";
+
+    if (!filmId) {
+        idopontSelect.innerHTML = `
+            <option value="">Először válassz filmet</option>
+        `;
+        return;
+    }
+
+    const idopontok = vetitesiIdopontok
+        .filter(adat => adat.filmId === filmId)
+        .map(adat => adat.idopont)
+        .filter((idopont, index, lista) => {
+            return lista.indexOf(idopont) === index;
+        })
+        .sort();
+
+    if (idopontok.length === 0) {
+        idopontSelect.innerHTML = `
+            <option value="">Nincs elérhető időpont</option>
+        `;
+        return;
+    }
+
+    idopontSelect.innerHTML = `
+        <option value="">Válassz időpontot</option>
+    `;
+
+    idopontok.forEach(idopont => {
+        const option = document.createElement("option");
+
+        option.value = idopont;
+        option.textContent = idopont;
+
+        idopontSelect.appendChild(option);
     });
 }
 
@@ -62,7 +111,7 @@ function tablazatMegjelenites(lista = foglalasok) {
             helyek = helyek.join(", ");
         }
 
-        let jegyek = foglalas.jegyekSzama || 1;
+        const jegyek = foglalas.jegyekSzama || 1;
 
         sor.innerHTML = `
             <td>${foglalas.id}</td>
@@ -97,7 +146,7 @@ function kartyakMegjelenites(lista = foglalasok) {
             helyek = helyek.join(", ");
         }
 
-        let jegyek = foglalas.jegyekSzama || 1;
+        const jegyek = foglalas.jegyekSzama || 1;
 
         kartya.className = "col-md-4 mb-4";
 
@@ -105,6 +154,7 @@ function kartyakMegjelenites(lista = foglalasok) {
             <div class="card h-100">
                 <div class="card-body">
                     <h5 class="card-title">${film.cim}</h5>
+
                     <p><strong>Név:</strong> ${foglalas.nev}</p>
                     <p><strong>Időpont:</strong> ${foglalas.idopont}</p>
                     <p><strong>Ülőhely:</strong> ${helyek}</p>
@@ -130,11 +180,12 @@ function ulohelyekMegjelenites() {
     kivalasztottHelyekKiirasa();
 
     const filmId = Number(document.getElementById("film").value);
-    const idopont = document.getElementById("idopont").value.replace("T", " ");
+    const idopont = document.getElementById("idopont").value;
 
     if (!filmId || !idopont) {
         document.getElementById("helyInfo").textContent =
             "Válaszd ki a filmet és az időpontot.";
+
         return;
     }
 
@@ -207,7 +258,8 @@ function kivalasztottHelyekKiirasa() {
     if (kivalasztottHelyek.length === 0) {
         szoveg.textContent = "Kiválasztott helyek: -";
     } else {
-        szoveg.textContent = "Kiválasztott helyek: " + kivalasztottHelyek.join(", ");
+        szoveg.textContent =
+            "Kiválasztott helyek: " + kivalasztottHelyek.join(", ");
     }
 }
 
@@ -227,7 +279,14 @@ function arFrissites() {
 
 document.getElementById("film").addEventListener("change", function () {
     arFrissites();
-    ulohelyekMegjelenites();
+    idopontokBetoltese();
+
+    kivalasztottHelyek = [];
+    document.getElementById("ulohelyek").innerHTML = "";
+    kivalasztottHelyekKiirasa();
+
+    document.getElementById("helyInfo").textContent =
+        "Válassz időpontot.";
 });
 
 document.getElementById("idopont").addEventListener("change", function () {
@@ -248,12 +307,18 @@ document.getElementById("foglalasForm").addEventListener("submit", function (eve
     const email = document.getElementById("email").value.trim();
     const telefon = document.getElementById("telefon").value.trim();
     const filmId = Number(document.getElementById("film").value);
-    const idopont = document.getElementById("idopont").value.replace("T", " ");
+    const idopont = document.getElementById("idopont").value;
     const jegyekSzama = Number(document.getElementById("jegyekSzama").value);
 
     const film = filmek.find(film => film.id === filmId);
 
-    if (nev === "" || email === "" || telefon === "" || !filmId || idopont === "") {
+    if (
+        nev === "" ||
+        email === "" ||
+        telefon === "" ||
+        !filmId ||
+        idopont === ""
+    ) {
         hibaUzenet("Minden mező kitöltése kötelező!");
         return;
     }
@@ -277,13 +342,22 @@ document.getElementById("foglalasForm").addEventListener("submit", function (eve
         return;
     }
 
+    const ervenyesIdopont = vetitesiIdopontok.some(adat => {
+        return adat.filmId === filmId && adat.idopont === idopont;
+    });
+
+    if (!ervenyesIdopont) {
+        hibaUzenet("Érvénytelen vetítési időpont!");
+        return;
+    }
+
     if (kivalasztottHelyek.length !== jegyekSzama) {
         hibaUzenet(`Pontosan ${jegyekSzama} ülőhelyet válassz ki!`);
         return;
     }
 
     const ujId = foglalasok.length > 0
-        ? Math.max(...foglalasok.map(f => f.id)) + 1
+        ? Math.max(...foglalasok.map(foglalas => foglalas.id)) + 1
         : 1;
 
     const ujFoglalas = {
@@ -301,7 +375,7 @@ document.getElementById("foglalasForm").addEventListener("submit", function (eve
     foglalasok.push(ujFoglalas);
 
     tablazatMegjelenites();
-	kartyakMegjelenites();
+    kartyakMegjelenites();
 
     document.getElementById("uzenet").innerHTML = `
         <div class="alert alert-success">
@@ -316,11 +390,17 @@ document.getElementById("foglalasForm").addEventListener("submit", function (eve
     `;
 
     document.getElementById("foglalasForm").reset();
+
     document.getElementById("ar").value = "";
 
     kivalasztottHelyek = [];
     document.getElementById("ulohelyek").innerHTML = "";
+
     kivalasztottHelyekKiirasa();
+    idopontokBetoltese();
+
+    document.getElementById("helyInfo").textContent =
+        "Válaszd ki a filmet és az időpontot.";
 
     setTimeout(() => {
         document.getElementById("ujFoglalasDoboz").style.display = "none";
@@ -354,7 +434,7 @@ function kartyasNezet() {
     document.getElementById("tablazatosNezet").style.display = "none";
     document.getElementById("kartyasNezet").style.display = "flex";
 
-	document.getElementById("kartyaGomb").classList.add("aktiv");
+    document.getElementById("kartyaGomb").classList.add("aktiv");
     document.getElementById("tablaGomb").classList.remove("aktiv");
 }
 
@@ -367,24 +447,17 @@ function ujFoglalasMutat() {
         doboz.style.display = "block";
 
         doboz.scrollIntoView({
-          behavior: "smooth"
+            behavior: "smooth"
         });
     }
-}
-
-function minimumDatumBeallitasa() {
-    const datumInput = document.getElementById("idopont");
-    const most = new Date();
-
-    most.setMinutes(most.getMinutes() - most.getTimezoneOffset());
-
-    datumInput.min = most.toISOString().slice(0, 16);
 }
 
 window.addEventListener("scroll", function () {
     const gomb = document.getElementById("felGomb");
 
-    if (!gomb) return;
+    if (!gomb) {
+        return;
+    }
 
     if (window.scrollY > 300) {
         gomb.style.display = "block";
